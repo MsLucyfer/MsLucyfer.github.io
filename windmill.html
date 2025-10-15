@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lonely Windmill</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+    <!-- Alan Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script>
+  
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            colors: {
+                pink: {
+                    500: '#EC4899',
+                    600: '#DB2777',
+                }
+            }
+        }
+    }
+}
+
+</script>
+<style>
+          body {
+            font-family: 'Alan Sans', sans-serif;
+        }
+.gallery-image {
+    transition: all 0.3s ease;
+}
+.gallery-image img {
+    transition: transform 0.3s ease;
+}
+.gallery-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
+}
+.nav-link { position: relative; }
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #EC4899;
+    transition: width 0.3s ease;
+}
+.nav-link:hover:after {
+    width: 100%;
+}
+#lightbox-img {
+    transition: transform 0.3s ease;
+}
+#lightbox-img:hover {
+    transform: none;
+}
+</style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen font-alan">
+
+ <!-- Navigation -->
+ <nav class="fixed top-0 left-0 w-full z-50 bg-gray-800/80 backdrop-blur-md">
+  <div class="flex items-center justify-between h-16 px-8">
+    <div class="text-xl font-semibold">
+      Eitvilė Petruševičiūtė | Game Designer & Artist
+  </div>
+      <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link text-white hover:text-pink-300">Home</a>
+          <a href="#overview" class="nav-link text-white hover:text-pink-300">Overview</a>
+          <a href="#gallery" class="nav-link text-white hover:text-pink-300">Gallery</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-white">
+          <i data-feather="menu"></i>
+      </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 pt-2 pb-4">
+      <a href="index.html" class="block py-2 text-white hover:text-pink-300">Home</a>
+      <a href="#overview" class="block py-2 text-white hover:text-pink-300">Overview</a>
+      <a href="#gallery" class="block py-2 text-white hover:text-pink-300">Gallery</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('assets/images/Windmill.png')] bg-cover bg-center opacity-20"></div>
+    <div class="container mx-auto px-4 z-10 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <span class="text-pink-500">Windmill</span> Project
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            A stylized 3D environment created with modular assets for game environments
+        </p>
+        <a href="#overview" class="bg-pink-600 hover:bg-pink-500 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center">
+            Explore Project
+            <i data-feather="arrow-down" class="ml-2"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Overview Section -->
+<section id="overview" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <img src="assets/images/Windmill.png" alt="Windmill Project" class="rounded-lg shadow-2xl w-full h-auto gallery-image" data-src="assets/images/Windmill.png">
+            </div>
+            <div class="md:w-1/2">
+              <h2 class="text-3xl font-bold mb-12 text-left">
+                <span class="border-b-4 border-pink-500 pb-2">Project Overview</span>
+            </h2>                
+            <p class="text-gray-300 mb-8">
+                    The Windmill project is a stylized scene created with modular assets and designed for game environments.
+                </p>
+                <div class="bg-gray-700 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-pink-200">Software Used:</h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <li class="flex items-center"><i data-feather="cpu" class="text-pink-500 mr-3"></i>Unity 6 HDRP</li>
+                        <li class="flex items-center"><i data-feather="box" class="text-pink-500 mr-3"></i>Blender</li>
+                        <li class="flex items-center"><i data-feather="image" class="text-pink-500 mr-3"></i>Substance Painter</li>
+                        <li class="flex items-center"><i data-feather="edit" class="text-pink-500 mr-3"></i>Photoshop</li>
+                        <li class="flex items-center"><i data-feather="package" class="text-pink-500 mr-3"></i>TreeIt</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">
+        <span class="border-b-4 border-pink-500 pb-2">Project Gallery</span>
+    </h2>   
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Gallery images with data-src -->
+            <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_01.png">
+                <img src="assets/images/Windmill_Assets_01.png" alt="Windmill Assets 01" class="rounded-lg w-full h-auto shadow-lg">
+            </a>
+            <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_02.png">
+                <img src="assets/images/Windmill_Assets_02.png" alt="Windmill Assets 02" class="rounded-lg w-full h-auto shadow-lg">
+            </a>
+            <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_03.png">
+                <img src="assets/images/Windmill_Assets_03.png" alt="Windmill Assets 03" class="rounded-lg w-full h-auto shadow-lg">
+            </a>
+            <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_04.png">
+                <img src="assets/images/Windmill_Assets_04.png" alt="Windmill Assets 04" class="rounded-lg w-full h-auto shadow-lg">
+            </a>
+            <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_05.png">
+                <img src="assets/images/Windmill_Assets_05.png" alt="Windmill Assets 05" class="rounded-lg w-full h-auto shadow-lg">
+            </a>
+            <!-- <div class="bg-gray-800 rounded-lg p-6 flex flex-col items-center justify-center border-2 border-dashed border-pink-500/30">
+                <i data-feather="plus-circle" class="text-pink-500 w-12 h-12 mb-4"></i>
+                <p class="text-gray-400 text-center">More assets coming soon</p>
+            </div> -->
+        </div>
+        <div class="text-center mt-12">
+            <a href="index.html#projects" class="inline-flex items-center text-pink-500 hover:text-pink-400 transition-colors">
+                <i data-feather="arrow-left" class="mr-2"></i>
+                Back to Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+  <img id="lightbox-img" src="" alt="Preview" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl object-contain">
+</div>
+
+<!--Footer-->>
+<footer class="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800 mt-16">
+  <div class="max-w-7xl mx-auto">
+      <!--<div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+              <span class="text-pink-500 font-bold text-xl">Eitvilė Petruševičiūtė</span>
+          </div>
+          <div class="flex space-x-4">
+              <a href="https://github.com/mslucifer" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                  <i data-feather="github"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                  <i data-feather="twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/eitvile-petruseviciute" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                  <i data-feather="linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/mslucyfer" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                  <i data-feather="instagram"></i>
+              </a>
+          </div>
+      </div>-->
+      <div class="mt-8 text-center text-gray-500 text-sm">
+          &copy; 2025 Eitvilė Petruševičiūtė. All rights reserved.
+      </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Initialize feather icons
+feather.replace();
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.gallery-image').forEach(img => {
+    img.addEventListener('click', e => {
+        e.preventDefault();
+        const src = img.getAttribute('data-src');
+        lightboxImg.src = src;
+        lightbox.classList.remove('hidden');
+    });
+});
+
+lightbox.addEventListener('click', e => {
+    if (e.target !== lightboxImg) {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+    }
+});
+</script>
+</body>
+</html>

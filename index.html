@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eitvilė Petruševičiūtė | Game Designer & Artist</title>
+
+    <!-- Tailwind & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Alan Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            500: '#EC4899',
+                            600: '#DB2777',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Alan Sans', sans-serif;
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(236, 72, 153, 0.4);
+                z-index: 10;
+            }
+
+                .project-card:hover img {
+                    transform: scale(1.1);
+                }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(236,72,153,0.2) 100%);
+        }
+
+        .hovered-element {
+            filter: drop-shadow(0 0 0.75rem rgba(236, 72, 153, 0.5));
+            transition: all 0.3s ease;
+        }
+
+            .hovered-element:hover {
+                filter: drop-shadow(0 0 1.5rem rgba(236, 72, 153, 0.8));
+                transform: scale(1.05);
+            }
+
+        section {
+            padding: 6rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        #projects {
+            padding-bottom: 8rem;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link { position: relative; }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #EC4899;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen font-alan">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gray-800/80 backdrop-blur-md">
+        <div class="flex items-center justify-between h-16 px-8">
+            <!-- Left corner: Name -->
+            <div class="text-xl font-semibold">
+                Eitvilė Petruševičiūtė | Game Designer & Artist
+            </div>
+
+    <!-- Right corner: Links -->
+    <div class="hidden md:flex space-x-8">
+        <a href="#hero" class="nav-link text-white hover:text-pink-300">Home</a>
+        <a href="#projects" class="nav-link text-white hover:text-pink-300">Projects</a>
+        <a href="#about" class="nav-link text-white hover:text-pink-300">About</a>
+        <a href="#contact" class="nav-link text-white hover:text-pink-300">Contact</a>
+    </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button class="mobile-menu-button p-2 rounded-md text-gray-400 hover:text-white">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</body>
+
+    <!-- Hero Section -->
+<header id="hero" class="relative pt-40 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center bg-cover bg-center"
+        style="background-image: url('assets/images/Title.png');">
+
+    <div class="max-w-7xl mx-auto text-center relative z-0">
+        <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+            Game <span class="text-pink-500">Designer & Artist</span> 
+        </h1>
+
+        <h1 class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight">
+            <span class="text-pink-500" > Eitvilė </span>Petruševičiūtė 
+        </h1>
+
+        <p class="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto">
+            Creating immersive worlds and memorable gaming experiences
+        </p>
+    </div>
+</header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-pink-500 pb-2">My Projects</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Abandoned Village -->
+                <a href="abandonedVillage.html" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:no-underline">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="assets/images/Abandoned%20Village.png" alt="Abandoned Village" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 relative h-full">
+                        <h3 class="text-xl font-bold mb-2 text-white">Abandoned Village</h3>
+                        <p class="text-gray-400 mb-4">A stylized environment night scene featuring an abandoned village constructed from modular assets, set in a natural landscape.</p>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-md">
+                                View Project
+                                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Windmill -->
+                <a href="windmill.html" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:no-underline">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="assets/images/Windmill.png" alt="Windmill" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 relative h-full">
+                        <h3 class="text-xl font-bold mb-2 text-white">Windmill</h3>
+                        <p class="text-gray-400 mb-4">A stylized environment scene featuring a windmill constructed from modular assets, set in a natural landscape.</p>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-md">
+                                View Project
+                                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Arcane Kart -->
+                <a href="kart.html" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:no-underline">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="assets/images/Kart.png" alt="Arcane Kart" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 relative h-full">
+                        <h3 class="text-xl font-bold mb-2 text-white">Arcane Kart</h3>
+                        <p class="text-gray-400 mb-4">A stylized kart inspired by Netflix TV series Arcane.</p>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-md">
+                                View Project
+                                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Tables n' Tales -->
+                <a href="https://mslucifer.itch.io/tables-n-tales" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:no-underline" target="_blank">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="assets/images/TablesNTales.png" alt="Tables n' Tales" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 relative h-full">
+                        <h3 class="text-xl font-bold mb-2 text-white">Tables n' Tales</h3>
+                        <p class="text-gray-400 mb-4">Engage in conversations with quirky locals at a lively and potentially haunted pub.</p>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-md">
+                                View Project
+                                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Stygian Eclipse -->
+                <a href="https://mslucifer.itch.io/stygian-eclipse" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:no-underline" target="_blank">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="assets/images/StygianEclipse.png" alt="Stygian Eclipse" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 relative h-full">
+                        <h3 class="text-xl font-bold mb-2 text-white">Stygian Eclipse</h3>
+                        <p class="text-gray-400 mb-4">You embody a shadow monster born from the darkest corners of human despair.</p>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-md">
+                                View Project
+                                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+<section id="about" class="px-4 sm:px-6 lg:px-8 bg-gray-800/50 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+            <span class="border-b-4 border-pink-500 pb-2">About Me</span>
+        </h2>
+
+        <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-8 text-center">
+            Hello! I'm Eitvilė, a passionate <span class="text-pink-400 font-semibold">game designer</span> and <span class="text-pink-400 font-semibold">3D artist</span>. 
+        </p>
+        
+
+        <!-- About Me -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+                
+
+                <!-- Work Section -->
+                <h3 class="text-2xl font-bold mb-4 text-white indent-8">
+                    <span class="border-b-2 border-pink-500 pb-1">Work</span>
+                </h3>
+                <p class="text-lg text-gray-300 mb-6 indent-8">
+                    I specialize in creating <span class="text-pink-300 font-semibold">game-ready assets and immersive stylized environments</span>, including <span class="text-pink-300 font-semibold">modular and hero assets</span>. I have experience in both PBR and hand-painted texturing, using tools like Substance Painter, Photoshop, Maya, and Blender.
+                </p>
+
+                <p class="text-lg text-gray-300 mb-6 indent-8">
+                    As a game designer, I bring ideas to life. I work with C# and Python and have experience in Unity and Unreal Engine, <span class="text-pink-300 font-semibold">designing engaging gameplay experiences</span>. Currently, I’m developing my own game with a team of 6 people, “Shadow Frames”, a psychological horror experience rendered entirely in grayscale. 
+                </p>
+
+                <!-- Hobbies Section -->
+                <h3 class="text-2xl font-bold mb-4 text-white indent-8">
+                    <span class="border-b-2 border-pink-500 pb-1">Hobbies</span>
+                </h3>
+                <p class="text-lg text-gray-300 mb-6 indent-8">
+                    Outside of work, I love staying active—swimming, boxing, running, dancing, and currently <span class="text-pink-300 font-semibold">bouldering</span>. I also enjoy playing games, which fuels my creativity and inspires me to explore new genres and expand my knowledge of game design.
+                </p>
+
+                <!-- Teaching Section -->
+                <h3 class="text-2xl font-bold mb-4 text-white indent-8">
+                    <span class="border-b-2 border-pink-500 pb-1">Teaching</span>
+                </h3>
+                <p class="text-lg text-gray-300 mb-6 indent-8">
+                    Additionally, I’ve spent the past two years tutoring fellow university students and teaching introductory math courses at Howest Digital Arts and Entertainment for incoming first-year students.
+                </p>
+            </div>
+
+                <!-- Profile Picture -->
+                <div class="relative w-96 h-96 rounded-full overflow-hidden border-4 border-pink-500">
+                    <img src="assets/images/Profile.png" alt="Eitvilė Petruševičiūtė" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        <!-- Skills -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
+            <!-- Skill Card -->
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/unity-69-logo-black-and-white.png" alt="Unity" class="w-10 h-10 filter invert">
+                </div>
+                <h4 class="font-medium">Unity</h4>
+            </div>
+
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/C_Sharp_wordmark.svg" alt="C#" class="w-10 h-10">
+                </div>
+                <h4 class="font-medium">C#</h4>
+            </div>
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="w-10 h-10">
+                </div>
+                <h4 class="font-medium">Python</h4>
+            </div>
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://i.pinimg.com/736x/a6/a4/bf/a6a4bfb514e96ecf6fdbb6cce692cc48.jpg" alt="Maya" class="w-10 h-10 object-cover rounded-full">
+                </div>
+                <h4 class="font-medium">Maya 3D</h4>
+            </div>
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender" class="w-10 h-10">
+                </div>
+                <h4 class="font-medium">Blender</h4>
+            </div>
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" class="w-10 h-10">
+                </div>
+                <h4 class="font-medium">Photoshop</h4>
+            </div>
+
+            <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-substance-3d-painter-icon.png" alt="Substance Painter" class="w-10 h-10">
+                </div>
+                <h4 class="font-medium">Substance Painter</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="px-4 sm:px-6 lg:px-8 bg-gray-900 py-24">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-pink-500 pb-2">Get In Touch</span>
+            </h2>
+
+            <!-- Contact Info Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-16">
+                <!-- Example Card -->
+                <a href="mailto:lucy.petru2022@gmail.com" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="mail" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">Email</h3>
+                </a>
+
+                <!-- Repeat the same pattern for GitHub, LinkedIn, YouTube, Instagram, Sketchfab -->
+                <a href="https://github.com/mslucifer" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="github" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">GitHub</h3>
+                </a>
+
+                <a href="https://www.linkedin.com/in/eitvile-petruseviciute" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="linkedin" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">LinkedIn</h3>
+                </a>
+
+                <a href="https://www.youtube.com/@lucypetru1097" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="youtube" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">YouTube</h3>
+                </a>
+
+                <a href="https://www.instagram.com/mslucyfer" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="instagram" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">Instagram</h3>
+                </a>
+
+                <a href="https://sketchfab.com/EitvilePetruseviciute" target="_blank"
+                   class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-pink-500/20 transition transform hover:-translate-y-2 active:scale-95 text-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 mb-4 mx-auto">
+                        <i data-feather="box" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">Sketchfab</h3>
+                </a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="max-w-3xl mx-auto bg-gray-800 p-10 rounded-2xl shadow-lg">
+
+                <form action="https://formspree.io/f/xdkwwvaz" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" name="name" placeholder="Name" required
+                               class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-pink-500 focus:border-pink-500">
+                        <input type="email" name="email" placeholder="Email" required
+                               class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-pink-500 focus:border-pink-500">
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" required
+                           class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-pink-500 focus:border-pink-500">
+                    <textarea name="message" rows="5" placeholder="Message" required
+                              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-pink-500 focus:border-pink-500"></textarea>
+                    <button type="submit"
+                            class="w-full px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg text-lg font-medium transition transform hover:-translate-y-1 active:scale-95 flex justify-center items-center">
+                        <i data-feather="send" class="w-5 h-5 mr-2"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <!--<div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-pink-500 font-bold text-xl">Eitvilė Petruševičiūtė</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/mslucifer" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eitvile-petruseviciute" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/mslucyfer" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-125">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>-->
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 Eitvilė Petruševičiūtė. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script>
+        feather.replace();
+
+        // Animate hero title
+        anime({
+            targets: 'header h1',
+            opacity: [0, 1],
+            translateY: [-20, 0],
+            duration: 1500,
+            easing: 'easeOutExpo',
+            delay: 300
+        });
+
+        anime({
+            targets: 'header h1 span',
+            color: ['#fff', '#EC4899'],
+            duration: 2000,
+            easing: 'easeInOutQuad',
+            delay: 800
+        });
+
+        anime({
+            targets: 'header p',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 1200,
+            easing: 'easeOutExpo',
+            delay: 1200
+        });
+
+        // Scroll reveal animations
+        ScrollReveal().reveal('section', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            interval: 100,
+            reset: false
+        });
+        // Active section detection
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'md:hidden hidden bg-gray-800';
+        mobileMenu.innerHTML = `
+                                                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                                                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-pink-500">About</a>
+                                                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-pink-500">Projects</a>
+                                                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-pink-500">Skills</a>
+                                                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-pink-500">Contact</a>
+</div>
+                                        `;
+        document.querySelector('nav').appendChild(mobileMenu);
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
