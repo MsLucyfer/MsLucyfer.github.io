@@ -132,39 +132,63 @@
     </div>
 </section> -->
 
+
+
+
   <!-- Hero Section -->
-  <section id='overview'
-    class="relative h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-full mb-10 md:mb-0 md:pr-10">
-          <video autoplay looxp muted playsinline controls class="rounded-lg shadow-2xl w-full h-auto gallery-image">
-            <source src="assets/videos/Windmill_Final.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="md:w-1/2">
-          <h2 class="text-3xl font-bold mb-12 text-left">
-            <span class="border-b-4 border-pink-500 pb-2">Project Overview</span>
-          </h2>
-          <p class="text-gray-300 mb-8">
-            The Windmill project is a stylized scene created with modular assets and designed for game environments.
-          </p>
-          <div class="bg-gray-700 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4 text-pink-200">Software Used:</h3>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <li class="flex items-center"><i data-feather="cpu" class="text-pink-500 mr-3"></i>Unity 6 HDRP</li>
-              <li class="flex items-center"><i data-feather="box" class="text-pink-500 mr-3"></i>Blender</li>
-              <li class="flex items-center"><i data-feather="image" class="text-pink-500 mr-3"></i>Substance Painter
-              </li>
-              <li class="flex items-center"><i data-feather="edit" class="text-pink-500 mr-3"></i>Photoshop</li>
-              <li class="flex items-center"><i data-feather="package" class="text-pink-500 mr-3"></i>TreeIt</li>
-            </ul>
-          </div>
+  <section id="overview"
+    class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden text-center px-6">
+
+    <!-- Title -->
+    <div class="relative z-10 mb-12">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+        <span class="text-pink-500">Windmill</span> Project
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
+        A stylized 3D environment built from modular assets — combining art, composition, and real-time performance.
+      </p>
+      <a href="#scene-breakdown"
+        class="bg-pink-600 hover:bg-pink-500 text-white px-8 py-3 rounded-full font-medium text-lg transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-pink-500/30">
+        Explore Project
+        <i data-feather="arrow-down" class="ml-2"></i>
+      </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 z-10 text-left">
+      <div class="md:w-full mb-10 md:mb-0 md:pr-10">
+        <video autoplay loop muted playsinline controls class="rounded-lg shadow-2xl w-full h-auto gallery-image">
+          <source src="assets/videos/Windmill_Final.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-12">
+          <span class="border-b-4 border-pink-500 pb-2">Project Overview</span>
+        </h2>
+        <p class="text-gray-300 mb-8">
+          A calm and relaxing sunset aesthetic — a small village nestled deep within the woods, far away from the noise
+          and stress of city life. As dusk settles, the windmill gently winds down, preparing to rest for the peaceful
+          night ahead.
+        </p>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 text-pink-200">Software Used:</h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <li class="flex items-center"><i data-feather="cpu" class="text-pink-500 mr-3"></i>Unity 6 HDRP</li>
+            <li class="flex items-center"><i data-feather="box" class="text-pink-500 mr-3"></i>Blender</li>
+            <li class="flex items-center"><i data-feather="image" class="text-pink-500 mr-3"></i>Substance Painter</li>
+            <li class="flex items-center"><i data-feather="edit" class="text-pink-500 mr-3"></i>Photoshop</li>
+            <li class="flex items-center"><i data-feather="package" class="text-pink-500 mr-3"></i>TreeIt</li>
+          </ul>
         </div>
       </div>
     </div>
+
+    <!-- Decorative Gradient -->
+    <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-gray-900 to-transparent"></div>
   </section>
+
 
   <!-- Scene Breakdown Section -->
   <section id="scene-breakdown" class="py-24 bg-gray-900">
