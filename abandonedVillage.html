@@ -18,7 +18,7 @@
         extend: {
           colors: {
             blue: {
-              400: '#3AB0E2',
+              400: '#84cce0',
               500: '#1f9cb8',
               600: '#146485',
             },
@@ -47,8 +47,10 @@
 
     .gallery-image img:hover {
       transform: scale(1.03);
-      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(31, 156, 184, 0.4);
+      /* blue glow instead of pink */
     }
+
 
     .nav-link {
       position: relative;
@@ -61,7 +63,7 @@
       height: 2px;
       bottom: -2px;
       left: 0;
-      background-color: #EC4899;
+      background-color: #1f9cb8;
       transition: width 0.3s ease;
     }
 
@@ -98,8 +100,9 @@
       <div class="hidden md:flex space-x-8">
         <a href="index.html" class="nav-link text-white hover:text-blue-400">Home</a>
         <a href="#overview" class="nav-link text-white hover:text-blue-400">Overview</a>
+        <a href="#images" class="nav-link text-white hover:text-blue-400">Gallery</a>
         <a href="#scene-breakdown" class="nav-link text-white hover:text-blue-400">Breakdown</a>
-        <a href="#gallery" class="nav-link text-white hover:text-blue-400">Gallery</a>
+        <a href="#gallery" class="nav-link text-white hover:text-blue-400">More</a>
       </div>
       <button id="mobile-menu-button" class="md:hidden text-white">
         <i data-feather="menu"></i>
@@ -109,7 +112,7 @@
     <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 pt-2 pb-4">
       <a href="index.html" class="block py-2 text-white hover:text-blue-400">Home</a>
       <a href="#overview" class="block py-2 text-white hover:text-blue-400">Overview</a>
-      <a href="#gallery" class="block py-2 text-white hover:text-blue-400">Gallery</a>
+      <a href="#images" class="block py-2 text-white hover:text-blue-400">Gallery</a>
     </div>
   </nav>
 
@@ -127,11 +130,6 @@
       <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
         A stylized 3D environment built from modular assets — combining art, composition, and real-time performance.
       </p>
-      <a href="#scene-breakdown"
-        class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-medium text-lg transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-blue-500/30">
-        Explore Project
-        <i data-feather="arrow-down" class="ml-2"></i>
-      </a>
     </div>
 
     <!-- Main Content -->
@@ -147,11 +145,17 @@
         <h2 class="text-3xl font-bold mb-12">
           <span class="border-b-4 border-blue-500 pb-2">Project Overview</span>
         </h2>
-        <p class="text-gray-300 mb-8">
-          A calm and relaxing sunset aesthetic — a small village nestled deep within the woods, far away from the noise
-          and stress of city life. As dusk settles, the windmill gently winds down, preparing to rest for the peaceful
-          night ahead.
+        <p class="text-gray-300 mb-4">
+          A foggy, forgotten village shrouded in quiet mystery — once alive now, only the faint echo of creaking docks
+          and the rustle of wind through broken buildings remains. Along the abandoned railroad, weathered signs and
+          fading posters.
         </p>
+
+        <p class="text-gray-300 mb-4">
+          Beyond the overgrown paths, a lonely graveyard rests beneath the pale moonlight,
+          where the stillness feels almost too alive.
+        </p>
+
         <div class="bg-gray-700 p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 text-blue-400">Software Used:</h3>
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -161,9 +165,19 @@
             <li class="flex items-center"><i data-feather="edit" class="text-blue-500 mr-3"></i>Photoshop</li>
             <li class="flex items-center"><i data-feather="package" class="text-blue-500 mr-3"></i>TreeIt</li>
           </ul>
+
+        </div>
+        <!-- Call to Action -->
+        <div class="pt-10">
+          <a href="#images"
+            class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-medium text-lg transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1">
+            Explore Project
+            <i data-feather="arrow-down" class="ml-2"></i>
+          </a>
         </div>
       </div>
     </div>
+
 
     <!-- Decorative Gradient -->
     <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-gray-900 to-transparent"></div>
@@ -177,40 +191,40 @@
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_01.jpg">
-          <img src="assets/images/Village_01.jpg" alt="Abandoned Village at Dusk"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres01.png">
+          <img src="assets/images/Village/pres01.png" alt="Abandoned Village at Dusk"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
 
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_02.jpg">
-          <img src="assets/images/Village_02.jpg" alt="Fog Over the River"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres02.png">
+          <img src="assets/images/Village/pres02.png" alt="Fog Over the River"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
 
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_03.jpg">
-          <img src="assets/images/Village_03.jpg" alt="Boat Dock and Lanterns"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres03.png">
+          <img src="assets/images/Village/pres03.png" alt="Boat Dock and Lanterns"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
 
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_04.jpg">
-          <img src="assets/images/Village_04.jpg" alt="Abandoned Pier"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres04.png">
+          <img src="assets/images/Village/pres04.png" alt="Abandoned Pier"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
 
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_05.jpg">
-          <img src="assets/images/Village_05.jpg" alt="Cabin Lights Reflected in Water"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres05.png">
+          <img src="assets/images/Village/pres05.png" alt="Cabin Lights Reflected in Water"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
 
-        <a href="#" class="block gallery-image" data-src="assets/images/Village_06.jpg">
-          <img src="assets/images/Village_06.jpg" alt="Path Leading into the Fog"
+        <a href="#" class="block gallery-image" data-src="assets/images/Village/pres06.png">
+          <img src="assets/images/Village/pres06.png" alt="Path Leading into the Fog"
             class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
         </a>
       </div>
 
       <p class="text-gray-400 text-center mt-12 italic max-w-3xl mx-auto">
-        Misty riverside stillness — forgotten boats, creaking docks, and a faint glow from distant cabins.
-        These images capture the eerie calm of a village long reclaimed by nature.
+        Misty riverside stillness — forgotten boats, creaking docks, and moonlit cabins.
+        The eerie calm of a village long reclaimed by nature.
       </p>
     </div>
   </section>
@@ -239,13 +253,8 @@
           <h3 class="text-2xl font-semibold mb-4 text-blue-400">Behind the Scene</h3>
           <p class="text-gray-300 leading-relaxed mb-6">
             This breakdown showcases the process of assembling and lighting the <span
-              class="text-blue-400 font-medium">Windmill environment</span>
-            in Unity 6 HDRP. It highlights the composition techniques, use of modular assets, and scene optimization for
-            real-time rendering.
-          </p>
-          <p class="text-gray-400 italic">
-            From initial blockout to the final render, every step was carefully designed to balance performance and
-            artistic quality.
+              class="text-blue-400 font-medium">Abandoned Village environment</span>
+            in Unity 6 HDRP. This video highlights the composition techniques, use of modular assets, lighting setup.
           </p>
         </div>
       </div>
@@ -258,43 +267,47 @@
     <div class="container mx-auto px-6 lg:px-12">
 
       <h2 class="text-3xl font-bold mb-16 text-center">
-        <span class="border-b-4 border-blue-500 pb-2">Project Gallery</span>
+        <span class="border-b-4 border-blue-500 pb-2">Project Development</span>
       </h2>
 
       <!-- Row 1: Modular Environment Assets -->
       <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
-        <!-- Left: Image -->
-        <div class="lg:w-1/2 w-full">
-          <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_01.png">
-            <img src="assets/images/Windmill_Assets_01.png" alt="Windmill Modular Assets"
-              class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+
+        <!-- Left: Image Gallery -->
+        <div class="lg:w-1/2 w-full grid grid-cols-1 sm:col-span-2 gap-6">
+          <a href="#" class="block gallery-image" data-src="assets/images/Village/Env01.png">
+            <img src="assets/images/Village/Env01.png" alt="Windmill Modular Assets"
+              class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
+          </a>
+
+          <a href="#" class="block gallery-image" data-src="assets/images/Village/Env02.png">
+            <img src="assets/images/Village/Env02.png" alt="Windmill Modular Assets"
+              class="rounded-2xl shadow-2xl w-full h-auto object-cover hover:opacity-90 transition-all duration-300">
           </a>
         </div>
+
         <!-- Right: Description -->
         <div class="lg:w-1/2 w-full">
           <h3 class="text-2xl font-semibold mb-4 text-blue-400">Modular Environment Assets</h3>
           <p class="text-gray-300 leading-relaxed mb-6">
-            The environment was created using <span class="text-blue-400 font-medium">modular assets</span> —
-            a versatile set of nature props elements that can be reused
-            to build cohesive, stylized game environments efficiently.
+            The environment was created using <span class="text-blue-400 font-medium">modular assets</span> — a
+            versatile set of nature props elements that can be reused to build cohesive, stylized game environments
+            efficiently.
           </p>
           <p class="text-gray-300 leading-relaxed mb-6">
             The <span class="text-blue-400 font-medium">trees</span> I first generated in <span
               class="text-green-400 font-medium">TreeIt</span> and later refined in <span
-              class="text-green-400 font-medium">Blender</span>.
-            <span class="text-blue-400 font-medium">Bushes</span> and <span class="text-blue-400 font-medium">grass
-              planes</span> were modeled manually in Blender, while
+              class="text-green-400 font-medium">Blender</span>. <span class="text-blue-400 font-medium">Bushes</span>
+            and <span class="text-blue-400 font-medium">grass planes</span> were modeled manually in Blender, while
             <span class="text-blue-400 font-medium">rocks</span> were sculpted in Blender and baked in <span
               class="text-green-400 font-medium">Substance Painter</span>.
           </p>
-
           <p class="text-gray-300 leading-relaxed mb-6">
             Textures for leaves and grass I hand-painted in <span class="text-green-400 font-medium">Photoshop</span>,
             and the <span class="text-blue-400 font-medium">tree bark</span> I sculpted in Blender and baked into a
-            detailed texture in Substance Painter.
-            This pipeline ensured a consistent stylized look across all natural assets.
+            detailed texture in Substance Painter. This pipeline ensured a consistent stylized look across all natural
+            assets.
           </p>
-
           <p class="text-gray-400 italic">
             Every element was made with attention to modularity, visual harmony, and performance within the real-time
             environment.
@@ -302,50 +315,48 @@
         </div>
       </div>
 
+
       <!-- Row 2: Windmill Composition -->
       <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
         <!-- Right: Images -->
         <div class="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_05.png">
-            <img src="assets/images/Windmill_Assets_05.png" alt="Windmill Asset 05"
+          <a href="#" class="block gallery-image" data-src="assets/gifs/AV_Houses01.gif">
+            <img src="assets/gifs/AV_Houses01.gif" alt="Windmill Asset 05"
               class="rounded-2xl shadow-lg w-full h-auto object-cover">
           </a>
-          <a href="#" class="block gallery-image" data-src="assets/images/Windmill_Assets_04.png">
-            <img src="assets/images/Windmill_Assets_04.png" alt="Windmill Asset 04"
+          <a href="#" class="block gallery-image" data-src="assets/gifs/AV_Houses02.gif">
+            <img src="assets/gifs/AV_Houses02.gif" alt="Windmill Asset 04"
               class="rounded-2xl shadow-lg w-full h-auto object-cover">
           </a>
-          <a href="#" class="block gallery-image sm:col-span-2" data-src="assets/images/Windmill_Assets_03.png">
-            <img src="assets/images/Windmill_Assets_03.png" alt="Windmill Asset 03"
+          <a href="#" class="block gallery-image sm:col-span-2" data-src="assets/images/Village/Assets_01.png">
+            <img src="assets/images/Village/Assets_01.png" alt="Windmill Asset 03"
               class="rounded-2xl shadow-lg w-full h-auto object-cover">
           </a>
-          <a href="#" class="block gallery-image sm:col-span-2" data-src="assets/images/Windmill_ModularBreakdown.png">
-            <img src="assets/images/Windmill_ModularBreakdown.png" alt="Windmill Modular Kit"
+          <a href="#" class="block gallery-image sm:col-span-2" data-src="assets/images/Village/Assets_02.png">
+            <img src="assets/images/Village/Assets_02.png" alt="Windmill Modular Kit"
+              class="rounded-2xl shadow-lg w-full h-auto object-cover">
+          </a>
+          <a href="#" class="block gallery-image sm:col-span-2" data-src="assets/images/Village/Assets_03.png">
+            <img src="assets/images/Village/Assets_03.png" alt="Windmill Modular Kit"
               class="rounded-2xl shadow-lg w-full h-auto object-cover">
           </a>
         </div>
 
         <!-- Left: Description -->
         <div class="lg:w-1/2 w-full">
-          <h3 class="text-2xl font-semibold mb-4 text-blue-400">The Windmill Model</h3>
+          <h3 class="text-2xl font-semibold mb-4 text-blue-400">Modular Asset Kit</h3>
 
           <p class="text-gray-300 leading-relaxed mb-6">
-            The windmill was assembled using the <span class="text-blue-400 font-medium">modular asset kit</span>,
+            The Houses and environment pieces were assembled using the <span class="text-blue-400 font-medium">modular
+              asset kit</span>,
             designed to create a cohesive and visually balanced structure for the environment.
-          </p>
-
-          <p class="text-gray-300 leading-relaxed mb-6">
-            This was my first time creating a full modular asset kit — a challenging but rewarding experience. Through
-            research, experimentation, and iteration, I was able to achieve my goal of building a complete stylized
-            windmill.
           </p>
 
           <p class="text-gray-300 leading-relaxed mb-6">
             I modeled the assets in <span class="text-green-400 font-medium">Blender</span> and textured them in <span
               class="text-green-400 font-medium">Substance Painter</span>.
-            Some materials, such as the brick walls and rock formations, were sculpted in Blender to generate unique
+            Some materials, such as the brick walls were sculpted in Blender to generate unique
             normal maps, later refined into tilable textures.
-            This project truly became a <span class="italic">“learn-as-you-go”</span> journey that deepened my
-            understanding of modular design and texturing workflows.
           </p>
         </div>
       </div>
@@ -378,12 +389,16 @@
           <h3 class="text-2xl font-semibold mb-4 text-blue-400">Unity Shaders</h3>
 
           <p class="text-gray-300 leading-relaxed mb-6">
-            For this project I also created Custom Shaders. They were created using <span
-              class="text-green-400 font-medium">Unity’s Shader Graph</span>
-            to bring the environment materials to life. These include stylized <span
-              class="text-blue-400 font-medium">grass, leaf, rock, and water shaders</span>
+            For this project I also created Custom Shaders and reused some used in
+            <a href="windmill.html" class="text-blue-400 font-medium hover:underline">Windmill project</a>.
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-6">
+            They were created using <span class="text-green-400 font-medium">Unity’s Shader Graph</span>
+            to bring the environment materials to life. These include stylized
+            <span class="text-blue-400 font-medium">grass, leaf, rock, and water shaders</span>
             designed to emphasize surface detail, color variation, and light interaction.
           </p>
+
 
           <p class="text-gray-300 leading-relaxed mb-4">
             <span class="text-blue-400 font-medium">Rock Shader:</span>
@@ -410,12 +425,20 @@
             its mode, while additional controls manage wind gusts and movement intensity for added realism.
           </p>
 
+          <p class="text-gray-300 leading-relaxed mb-6">
+            <span class="text-blue-400 font-medium">Vertex Paint:</span>
+            This shader allows me to paint one texture on top of another. I used it to add extra details, such as dust,
+            dirt, and damage to the buildings, so they wouldn’t look too repetitive.
+          </p>
+
+
           <p class="text-gray-400 italic">
             Each shader was designed to be flexible, performant, and visually cohesive within the stylized world and
             also Artist friendly.
           </p>
         </div>
       </div>
+
 
       <!-- Back Link -->
       <div class="text-center mt-16">
@@ -425,19 +448,19 @@
           Back to Projects
         </a>
       </div>
+  </section>
 
 
 
-      <!-- Lightbox -->
-      <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
-        <img id="lightbox-img" src="" alt="Preview"
-          class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl object-contain">
-      </div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+    <img id="lightbox-img" src="" alt="Preview" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl object-contain">
+  </div>
 
-      <!--Footer-->>
-      <footer class="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800 mt-16">
-        <div class="max-w-7xl mx-auto">
-          <!--<div class="flex flex-col md:flex-row justify-between items-center">
+  <!--Footer-->>
+  <footer class="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800 mt-16">
+    <div class="max-w-7xl mx-auto">
+      <!--<div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-4 md:mb-0">
               <span class="text-pink-500 font-bold text-xl">Eitvilė Petruševičiūtė</span>
           </div>
@@ -456,57 +479,57 @@
               </a>
           </div>
       </div>-->
-          <div class="mt-8 text-center text-gray-500 text-sm">
-            &copy; 2025 Eitvilė Petruševičiūtė. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <div class="mt-8 text-center text-gray-500 text-sm">
+        &copy; 2025 Eitvilė Petruševičiūtė. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
-      <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-          document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-              });
-            }
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
           });
-        });
+        }
+      });
+    });
 
-        // Initialize feather icons
-        feather.replace();
+    // Initialize feather icons
+    feather.replace();
 
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
-        document.querySelectorAll('.gallery-image').forEach(img => {
-          img.addEventListener('click', e => {
-            e.preventDefault();
-            const src = img.getAttribute('data-src');
-            lightboxImg.src = src;
-            lightbox.classList.remove('hidden');
-          });
-        });
+    document.querySelectorAll('.gallery-image').forEach(img => {
+      img.addEventListener('click', e => {
+        e.preventDefault();
+        const src = img.getAttribute('data-src');
+        lightboxImg.src = src;
+        lightbox.classList.remove('hidden');
+      });
+    });
 
-        lightbox.addEventListener('click', e => {
-          if (e.target !== lightboxImg) {
-            lightbox.classList.add('hidden');
-            lightboxImg.src = '';
-          }
-        });
-      </script>
+    lightbox.addEventListener('click', e => {
+      if (e.target !== lightboxImg) {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+      }
+    });
+  </script>
 </body>
 
 </html>

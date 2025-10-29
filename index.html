@@ -26,6 +26,7 @@
                         },
 
                         blue: {
+                            400: '#49d0eb',
                             500: '#6AE0F0',
                         },
 
@@ -159,21 +160,21 @@
 
 <!-- Hero Section -->
 <header id="hero"
-    class="relative pt-40 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+    class="relative pt-36 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
     style="background-image: url('assets/images/Title.png');">
 
     <div class="max-w-7xl mx-auto text-center relative z-0">
-        <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+        <h1 class="text-3xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span class="text-blue-500"> Game Designer </span>
             &
             <span class="text-yellow-500"> Game Artist </span>
         </h1>
 
-        <h1 class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight">
+        <h1 class="text-4xl md:text-8xl font-extrabold mb-6 leading-tight">
             <span class="text-pink-500"> Eitvilė </span>Petruševičiūtė
         </h1>
 
-        <p class="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto">
+        <p class="text-2xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
             Creating immersive worlds and memorable gaming experiences
         </p>
     </div>
@@ -181,23 +182,22 @@
     <!-- Buttons floating on hero -->
     <div id="hero-buttons" class="absolute left-1/2 top-[75vh] transform -translate-x-1/2 flex justify-center gap-6">
         <!-- Blue Button -->
-        <div id="blue-button-wrapper"
-            class="flex-shrink-0 rounded-xl p-0.5 bg-gradient-to-r from-blue-800 to-blue-500 opacity-0">
-            <a href="#game-design"
-                class="block px-10 py-5 text-[1.2rem] bg-blue-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-blue-400 transition transform hover:-translate-y-1">
-                Game Design
-            </a>
+        <div id="blue-button-wrapper" href="#game-design"
+            class="inline-flex items-center px-8 py-3 bg-blue-500 text-gray-900 font-medium text-lg rounded-full shadow-lg hover:bg-blue-400 hover:shadow-blue-500/40 transform hover:-translate-y-1 transition-all duration-300 ease-out">
+            Game Design
+            <i data-feather="arrow-down" class="ml-2"></i>
+
         </div>
 
         <!-- Yellow Button -->
-        <div id="yellow-button-wrapper"
-            class="flex-shrink-0 rounded-xl p-0.5 bg-gradient-to-r from-yellow-800 to-yellow-400 opacity-0">
-            <a href="#art-portfolio"
-                class="block px-10 py-5 text-[1.2rem] bg-yellow-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-yellow-400 transition transform hover:-translate-y-1">
-                Art Portfolio
-            </a>
+        <div id="yellow-button-wrapper" href="#art-portfolio"
+            class="inline-flex items-center px-8 py-3 bg-yellow-500 text-gray-900 font-medium text-lg rounded-full shadow-lg hover:bg-yellow-400 hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 ease-out">
+            Art Portfolio
+            <i data-feather="arrow-down" class="ml-2"></i>
         </div>
     </div>
+
+
 </header>
 
 
