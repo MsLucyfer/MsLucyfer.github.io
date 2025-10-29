@@ -234,25 +234,40 @@
 
 <!--CARD CREATION-->
 <script>
-    function createProjectCard({ title, description, imageSrc, link, shadowColor = 'pink' }) {
+    function createProjectCard({ title, description, imageSrc, logoSrc = null, link, shadowColor = 'pink' }) {
         const card = document.createElement('a');
         card.href = link;
-        card.target = '_blank';
+        card.target = '_self';
         card.className = `project-card ${shadowColor}-shadow block bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-4 max-w-sm w-full`;
 
         card.innerHTML = `
-        <div class="relative overflow-hidden aspect-[5/3] rounded-t-2xl">
-            <img src="${imageSrc}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
-        <div class="p-6">
-            <h4 class="text-lg font-semibold text-white mb-2">${title}</h4>
-            <p class="text-gray-400 text-sm">${description}</p>
-        </div>
+      <div class="relative overflow-hidden aspect-[5/3] rounded-t-2xl">
+        <img src="${imageSrc}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+
+        <!-- Optional overlay gradient -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+
+        ${logoSrc
+                ? `
+              <!-- Logo in bottom-right -->
+              <div class="absolute bottom-3 right-3 bg-black/10 backdrop-blur-sm p-2 rounded-lg">
+                <img src="${logoSrc}" alt="Software Logo" class="w-8 h-8 object-contain">
+              </div>
+            `
+                : ''
+            }
+      </div>
+
+      <div class="p-6">
+        <h4 class="text-lg font-semibold text-white mb-2">${title}</h4>
+        <p class="text-gray-400 text-sm">${description}</p>
+      </div>
     `;
+
         return card;
     }
 </script>
+
 
 
 <!-- GAME DESIGN SECTION -->
@@ -273,18 +288,21 @@
                 title: "Shadow Frames",
                 description: "You embody a shadow monster born from the darkest corners of human despair.",
                 imageSrc: "assets/gifs/ShadowFrames.gif",
+                logoSrc: "assets/icons/unity.png",
                 link: ""
             },
             {
                 title: "Tables n' Tales",
                 description: "Engage in conversations with quirky locals at a lively and potentially haunted pub.",
                 imageSrc: "assets/gifs/TablesNTales.gif",
+                logoSrc: "assets/icons/unity.png",
                 link: "https://mslucifer.itch.io/tables-n-tales"
             },
             {
                 title: "Stygian Eclipse",
                 description: "You embody a shadow monster born from the darkest corners of human despair.",
                 imageSrc: "assets/gifs/StygianEclipse.gif",
+                logoSrc: "assets/icons/unity.png",
                 link: "https://mslucifer.itch.io/stygian-eclipse"
             },
 
@@ -292,12 +310,14 @@
                 title: "Quilt Adventure",
                 description: "You embody a shadow monster born from the darkest corners of human despair.",
                 imageSrc: "assets/gifs/QuiltAdventure.gif",
+                logoSrc: "assets/icons/unity.png",
                 link: ""
             },
             {
                 title: "Colour it!",
                 description: "You embody a shadow monster born from the darkest corners of human despair.",
                 imageSrc: "assets/gifs/ColourIt.gif",
+                logoSrc: "assets/icons/unity.png",
                 link: ""
             }
         ];
@@ -328,36 +348,42 @@
                 title: "Abandoned Village",
                 description: "A stylized environment night scene featuring an abandoned village constructed from modular assets.",
                 imageSrc: "assets/images/Abandoned%20Village.png",
+                logoSrc: "assets/icons/unity.png",
                 link: "abandonedVillage.html"
             },
             {
                 title: "Windmill",
                 description: "A stylized environment scene featuring a windmill constructed from modular assets.",
                 imageSrc: "assets/images/Windmill.png",
+                logoSrc: "assets/icons/unity.png",
                 link: "windmill.html"
             },
             {
                 title: "Arcane Kart",
                 description: "A stylized hand painted in PBR kart inspired by Netflix's Arcane series.",
                 imageSrc: "assets/images/Kart.png",
+                logoSrc: "assets/icons/unity.png",
                 link: "arcaneKart.html"
             },
             {
                 title: "Prosthesis Shop",
                 description: "A stylized hand painted prosthesis shop, style inspiration - Albian Online",
                 imageSrc: "assets/images/Shop/Thumbnail.png",
+                logoSrc: "https://static.sketchfab.com/img/press/logos/sketchfab-logo-white.png",
                 link: "shop.html"
             },
             {
                 title: "Ro Buddy",
                 description: "Herbo-Matic, always ready to help out in the garden!",
                 imageSrc: "assets/images/RoBuddy/Ro_thumbnail.png",
+                logoSrc: "assets/icons/blender.png",
                 link: "robot.html"
             },
             {
                 title: "Banana Plane",
                 description: "A stylized hand painted plane inspired by N3N-3 Floatplane",
                 imageSrc: "assets/images/Banana/pres1.jpg",
+                logoSrc: "https://static.sketchfab.com/img/press/logos/sketchfab-logo-white.png",
                 link: "banana.html"
             }
         ];
@@ -440,8 +466,7 @@
         <!-- Skill Card -->
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/unity-69-logo-black-and-white.png" alt="Unity"
-                    class="w-10 h-10 filter invert">
+                <img src="assets/icons/unity.png" alt="Unity" class="w-10 h-10">
             </div>
             <h4 class="font-medium">Unity</h4>
         </div>
@@ -449,8 +474,7 @@
 
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/C_Sharp_wordmark.svg" alt="C#"
-                    class="w-10 h-10">
+                <img src="assets/icons/Csharp.png" alt="C#" class="w-10 h-15">
             </div>
             <h4 class="font-medium">C#</h4>
         </div>
@@ -465,32 +489,28 @@
 
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://i.pinimg.com/736x/a6/a4/bf/a6a4bfb514e96ecf6fdbb6cce692cc48.jpg" alt="Maya"
-                    class="w-10 h-10 object-cover rounded-full">
+                <img src="assets/icons/maya.png" alt="Maya" class="w-10 h-10 ">
             </div>
             <h4 class="font-medium">Maya 3D</h4>
         </div>
 
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender"
-                    class="w-10 h-10">
+                <img src="assets/icons/Blender.png" alt="Blender" class="w-10 h-15">
             </div>
             <h4 class="font-medium">Blender</h4>
         </div>
 
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
-                    alt="Photoshop" class="w-10 h-10">
+                <img src="assets/icons/Photoshop.png" alt="Photoshop" class="w-10 h-10">
             </div>
             <h4 class="font-medium">Photoshop</h4>
         </div>
 
         <div class="bg-gray-700 p-6 rounded-xl text-center border border-gray-500">
             <div class="w-16 h-16 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-substance-3d-painter-icon.png"
-                    alt="Substance Painter" class="w-10 h-10">
+                <img src="assets/icons/substance.png" alt="Substance Painter" class="w-10 h-10">
             </div>
             <h4 class="font-medium">Substance Painter</h4>
         </div>
