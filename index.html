@@ -138,8 +138,8 @@
             <!-- Right corner: Links -->
             <div class="hidden md:flex space-x-8">
                 <a href="#hero" class="nav-link text-white hover:text-pink-300">Home</a>
-                <a href="#game-design" class="nav-link text-white hover:text-pink-300">Game Design</a>
                 <a href="#art-portfolio" class="nav-link text-white hover:text-pink-300">Art Portfolio</a>
+                <a href="#game-design" class="nav-link text-white hover:text-pink-300">Game Design</a>
                 <a href="#about" class="nav-link text-white hover:text-pink-300">About</a>
                 <a href="#contact" class="nav-link text-white hover:text-pink-300">Contact</a>
             </div>
@@ -228,10 +228,6 @@
 </script>
 
 
-
-
-
-
 <!--CARD CREATION-->
 <script>
     function createProjectCard({ title, description, imageSrc, logoSrc = null, link, shadowColor = 'pink' }) {
@@ -268,70 +264,8 @@
     }
 </script>
 
-
-
-<!-- GAME DESIGN SECTION -->
-<section id="game-design" class="px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen flex items-center">
-    <div class="max-w-7xl mx-auto text-center mb-12">
-        <h2 class="text-3xl font-bold text-white inline-block border-b-4 border-blue-500 pb-2 pt-5">
-            Game Design
-        </h2>
-    </div>
-
-    <!-- Game Design Cards -->
-    <div id="gameDesignCards"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"></div>
-
-    <script>
-        const gameDesignData = [
-            {
-                title: "Shadow Frames",
-                description: "You embody a shadow monster born from the darkest corners of human despair.",
-                imageSrc: "assets/gifs/ShadowFrames.gif",
-                logoSrc: "assets/icons/unity.png",
-                link: ""
-            },
-            {
-                title: "Tables n' Tales",
-                description: "Engage in conversations with quirky locals at a lively and potentially haunted pub.",
-                imageSrc: "assets/gifs/TablesNTales.gif",
-                logoSrc: "assets/icons/unity.png",
-                link: "https://mslucifer.itch.io/tables-n-tales"
-            },
-            {
-                title: "Stygian Eclipse",
-                description: "You embody a shadow monster born from the darkest corners of human despair.",
-                imageSrc: "assets/gifs/StygianEclipse.gif",
-                logoSrc: "assets/icons/unity.png",
-                link: "https://mslucifer.itch.io/stygian-eclipse"
-            },
-
-            {
-                title: "Quilt Adventure",
-                description: "You embody a shadow monster born from the darkest corners of human despair.",
-                imageSrc: "assets/gifs/QuiltAdventure.gif",
-                logoSrc: "assets/icons/unity.png",
-                link: ""
-            },
-            {
-                title: "Colour it!",
-                description: "You embody a shadow monster born from the darkest corners of human despair.",
-                imageSrc: "assets/gifs/ColourIt.gif",
-                logoSrc: "assets/icons/unity.png",
-                link: ""
-            }
-        ];
-
-        const gameDesignContainer = document.getElementById('gameDesignCards');
-        gameDesignData.forEach(data => {
-            gameDesignContainer.appendChild(createProjectCard({ ...data, shadowColor: 'blue' }));
-        });
-    </script>
-
-</section>
-
 <!-- ART PORTFOLIO SECTION -->
-<section id="art-portfolio" class="px-4 sm:px-6 lg:px-8 bg-gray-800/50 min-h-screen flex items-center">
+<section id="art-portfolio" class="px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen flex items-center">
     <div class="max-w-7xl mx-auto text-center mb-12">
         <h2 class="text-3xl font-bold text-white inline-block border-b-4 border-yellow-500 pb-2 pt-5">
             Art Portfolio
@@ -394,6 +328,68 @@
         });
     </script>
 </section>
+
+<!-- GAME DESIGN SECTION -->
+<section id="game-design" class="px-4 sm:px-6 lg:px-8 bg-gray-800/50 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-white inline-block border-b-4 border-blue-500 pb-2 pt-5">
+            Game Design
+        </h2>
+    </div>
+
+    <!-- Game Design Cards -->
+    <div id="gameDesignCards"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"></div>
+
+    <script>
+        const gameDesignData = [
+            {
+                title: "Shadow Frames",
+                description: "A pchychological horror game, designed fully in black and white.",
+                imageSrc: "assets/gifs/ShadowFrames.gif",
+                logoSrc: "assets/icons/unity.png",
+                link: "shadowFrames.html"
+            },
+            {
+                title: "Tables n' Tales",
+                description: "Engage in conversations with quirky locals at a lively and potentially haunted pub.",
+                imageSrc: "assets/gifs/TablesNTales.gif",
+                logoSrc: "assets/icons/unity.png",
+                link: "https://mslucifer.itch.io/tables-n-tales"
+            },
+            {
+                title: "Stygian Eclipse",
+                description: "You embody a shadow monster born from the darkest corners of human despair.",
+                imageSrc: "assets/gifs/StygianEclipse.gif",
+                logoSrc: "assets/icons/unity.png",
+                link: "https://mslucifer.itch.io/stygian-eclipse"
+            },
+
+            {
+                title: "Quilt Adventure",
+                description: "! THIS PAGE IS STILL A WORK IN PROGRESS ! The directory currently is my Miro board",
+                imageSrc: "assets/gifs/QuiltAdventure.gif",
+                logoSrc: "assets/icons/unity.png",
+                link: "https://miro.com/app/board/uXjVNpEig_Y=/?share_link_id=590326442191"
+            },
+            {
+                title: "Colour it!",
+                description: "! THIS PAGE IS STILL A WORK IN PROGRESS ! The directory currently is my Miro board",
+                imageSrc: "assets/gifs/ColourIt.gif",
+                logoSrc: "assets/icons/unity.png",
+                link: "https://miro.com/app/board/uXjVNpEig_Y=/?share_link_id=590326442191"
+            }
+        ];
+
+        const gameDesignContainer = document.getElementById('gameDesignCards');
+        gameDesignData.forEach(data => {
+            gameDesignContainer.appendChild(createProjectCard({ ...data, shadowColor: 'blue' }));
+        });
+    </script>
+
+</section>
+
+
 
 <!-- About & Skills Section -->
 <section id="about" class="px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen flex items-center">
@@ -520,7 +516,7 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="px-4 sm:px-6 lg:px-8 bg-gray-900 py-24">
+<section id="contact" class="px-4 sm:px-6 lg:px-8 bg-gray-800/60 py-24">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-12 text-center">
             <span class="border-b-4 border-pink-500 pb-2">Get In Touch</span>
