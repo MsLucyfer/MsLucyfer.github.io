@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Frames</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gray: {
+              50: '#fafafa',
+              100: '#f4f4f5',
+              200: '#e4e4e7',
+              300: '#d4d4d8',
+              400: '#a1a1aa',
+              500: '#71717a',
+              600: '#52525b',
+              700: '#3f3f46',
+              800: '#27272a',
+              900: '#18181b',
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Alan Sans', sans-serif;
+    }
+
+    .gallery-image img {
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%);
+    }
+
+    .gallery-image img:hover {
+      transform: scale(1.03);
+      filter: grayscale(0%);
+      box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #ffffff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-gray-100 min-h-screen font-alan">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+    <div class="flex items-center justify-between h-16 px-8">
+      <div class="text-xl font-semibold text-white">
+        Eitvilė Petruševičiūtė | Game Producer & Designer
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link text-gray-200 hover:text-white relative">Home</a>
+        <a href="#overview" class="nav-link text-gray-200 hover:text-white relative">Overview</a>
+        <a href="#team" class="nav-link text-gray-200 hover:text-white relative">Team</a>
+        <a href="#gallery" class="nav-link text-gray-200 hover:text-white relative">Development</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-white">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="overview"
+    class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900 text-center px-6">
+    <div class="relative z-10 mb-12">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+        <span class="text-white">Shadow</span> Frames
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+        A psychological horror game set in a deserted 1960s Irish pub — where every photo reveals something hidden
+        within the frame.
+      </p>
+    </div>
+
+    <!-- Placeholder for trailer or key art -->
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 z-10 text-left">
+      <div class="md:w-full mb-10 md:mb-0 md:pr-10 gallery-image">
+        <img src="assets/images/shadowFrames/Thumbnail.png" alt="Shadow Frames Key Art"
+          class="rounded-lg shadow-2xl w-full h-auto grayscale">
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-8 border-b border-gray-600 pb-2 text-white">Project Overview</h2>
+        <p class="text-gray-300 mb-8">
+          <span class="text-white font-medium">Shadow Frames</span> is currently a <span class="font-semibold">work in
+            progress</span>, entering its third week of production.
+          The game has atmospheric storytelling, environmental exploration, and subtle psychological horror mechanics
+          inspired by indie titles like <i>I’m on Observation Duty</i>, <i>The Mortuary Assistant</i> and <i>Chilla's
+            art
+            games</i>.
+        </p>
+
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-xl font-semibold mb-4 text-white">Tools & Software</h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300">
+            <li class="flex items-center"><i data-feather="cpu" class="mr-3 text-gray-400"></i>Unreal Engine 5.5</li>
+            <li class="flex items-center"><i data-feather="box" class="mr-3 text-gray-400"></i>Blender</li>
+            <li class="flex items-center"><i data-feather="image" class="mr-3 text-gray-400"></i>Substance Painter</li>
+            <li class="flex items-center"><i data-feather="edit" class="mr-3 text-gray-400"></i>Photoshop</li>
+            <li class="flex items-center"><i data-feather="layers" class="mr-3 text-gray-400"></i>HacknPlan</li>
+            <li class="flex items-center"><i data-feather="hard-drive" class="mr-3 text-gray-400"></i>Perforce</li>
+          </ul>
+        </div>
+
+        <div class="pt-10">
+          <a href="#gallery" id="view-development-button"
+            class="bg-white hover:bg-gray-200 text-black px-8 py-3 rounded-full font-medium text-lg inline-flex items-center shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+            View Development
+            <i data-feather="arrow-down" class="ml-2"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-24 bg-black border-t border-gray-800">
+    <div class="container mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-3xl font-bold mb-12 border-b border-gray-600 inline-block pb-2 text-white">Our Team</h2>
+      <p class="text-gray-300 max-w-3xl mx-auto mb-16">
+        <span class="text-white font-medium">Shadow Frames</span> is developed by a small team of six passionate game
+        developers. We aim to craft an immersive, tension-driven experience that feels both intimate and unsettling.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-10 text-left">
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team1.png" alt="Producer portrait"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Eitvilė Petruševičiūtė</h3>
+          <p class="text-gray-300 mb-2">Game Producer | Game Designer | 3D Artist (Modeling Support)</p>
+          <p class="text-gray-500 text-sm italic">Oversees production, directs creative vision, and contributes to art
+            and modeling pipelines.</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team2.png" alt="Team member"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Ine Horcedez</h3>
+          <p class="text-gray-300 mb-2">Gameplay programming</p>
+          <p class="text-gray-500 text-sm italic">Responsible for gameplay logic, UI systems, and interaction design in
+            Unreal Engine 5.5.</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team2.png" alt="Team member"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Hades Speranskaya</h3>
+          <p class="text-gray-300 mb-2">Gameplay programming</p>
+          <p class="text-gray-500 text-sm italic">Responsible for gameplay logic, UI systems, and interaction design in
+            Unreal Engine 5.5.</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team3.png" alt="Team member"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Daan Van Schuylenbergh</h3>
+          <p class="text-gray-300 mb-2">Environment Artist & Lighting</p>
+          <p class="text-gray-500 text-sm italic">Focuses on lighting, mood, and prop detailing to enhance the eerie pub
+            atmosphere.</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team3.png" alt="Team member"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Roeland Van Sichem De Combe</h3>
+          <p class="text-gray-300 mb-2">Character Artist & Prop Artist</p>
+          <p class="text-gray-500 text-sm italic">Focuses on character creation, mood, and prop modeling.</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800">
+          <img src="assets/images/placeholder_team3.png" alt="Team member"
+            class="rounded-xl mb-4 w-full h-48 object-cover grayscale">
+          <h3 class="text-xl font-semibold text-white mb-2">Igor Szuniewicz</h3>
+          <p class="text-gray-300 mb-2">Sound Integration</p>
+          <p class="text-gray-500 text-sm italic">Focuses on integrating sound in to the game, produces sound effects
+            and
+            music.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Gallery -->
+  <section id="gallery" class="py-24 bg-black border-t border-gray-800">
+    <div class="container mx-auto px-6 lg:px-12">
+      <h2 class="text-3xl font-bold mb-16 text-center border-b border-gray-600 inline-block pb-2 text-white">Development
+        Progress</h2>
+
+      <!-- Intro Section -->
+      <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
+        <!-- Main GIF -->
+        <div class="lg:w-1/2 w-full gallery-image">
+          <img src="assets/gifs/shadowFrames/ShadowFrames.gif" alt="Unity Prototype - Anomalies"
+            class="rounded-2xl shadow-2xl w-full h-auto object-cover grayscale">
+        </div>
+
+        <!-- Text and Image Grid -->
+        <div class="lg:w-1/2 w-full">
+          <h3 class="text-2xl font-semibold mb-4 text-white">Ideation & First Prototype</h3>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            To gather interest for the project, I designed and built a small playable prototype to pitch to the
+            students.
+            The process began with brainstorming and wireframing ideas on a MIRO board, followed by developing a
+            functional
+            prototype in Unity to test gameplay flow and atmosphere.
+          </p>
+
+          <!-- Inline Image Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="gallery-image bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+              <img src="assets/images/shadowFrames/Ideation.jpg" alt="Miro Ideation"
+                class="w-full h-32 object-cover grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                onclick="openLightbox(this.src, this.alt)">
+            </div>
+
+            <div class="gallery-image bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+              <img src="assets/gifs/shadowFrames/Cleaning.gif" alt="Unity Prototype - Cleaning"
+                class="w-full h-32 object-cover grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                onclick="openLightbox(this.src, this.alt)">
+            </div>
+
+            <div class="gallery-image bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+              <img src="assets/images/shadowFrames/MoodBoard.png" alt="Reference Research"
+                class="w-full h-32 object-cover grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                onclick="openLightbox(this.src, this.alt)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+        <div class="lg:w-1/2 w-full gallery-image">
+          <img src="assets/images/placeholder_materials.png" alt="Work"
+            class="rounded-2xl shadow-2xl w-full h-auto object-cover grayscale">
+        </div>
+        <div class="lg:w-1/2 w-full">
+          <h3 class="text-2xl font-semibold mb-4 text-white">To be updated...</h3>
+          <p class="text-gray-300 leading-relaxed mb-6">
+
+          </p>
+          <p class="text-gray-500 italic">
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black py-8 text-center border-t border-gray-800">
+    <div class="text-gray-500 text-sm">&copy; 2025 Eitvilė Petruševičiūtė. All rights reserved.</div>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+    <img id="lightbox-img" src="" alt=""
+      class="max-w-5xl w-auto max-h-[90vh] rounded-2xl shadow-2xl border border-gray-700 transition-transform duration-300 scale-95">
+  </div>
+  <!-- Lightbox Overlay -->
+  <div id="lightbox"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+    <img id="lightbox-img" src="" alt=""
+      class="max-w-5xl w-auto max-h-[90vh] rounded-2xl shadow-2xl border border-gray-700 transition-transform duration-300 scale-95 cursor-zoom-in">
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+    <img id="lightbox-img" src="" alt=""
+      class="max-w-5xl w-auto max-h-[90vh] rounded-2xl shadow-2xl border border-gray-700 transition-transform duration-300 scale-95 cursor-zoom-in">
+  </div>
+
+  <!-- Single Lightbox Overlay -->
+  <div id="lightbox"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+    <img id="lightbox-img" src="" alt=""
+      class="max-w-5xl w-auto max-h-[90vh] rounded-2xl shadow-2xl border border-gray-700 transition-transform duration-300 scale-95 cursor-zoom-in">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let isZoomed = false;
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        lightbox.classList.add('opacity-100');
+        lightbox.classList.remove('opacity-0');
+        lightboxImg.classList.add('scale-100');
+        lightboxImg.classList.remove('scale-95');
+      });
+      document.body.style.overflow = 'hidden';
+      isZoomed = false;
+      lightboxImg.style.transform = 'scale(1)';
+      lightboxImg.classList.remove('cursor-zoom-out');
+      lightboxImg.classList.add('cursor-zoom-in');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('opacity-100');
+      lightbox.classList.add('opacity-0');
+      lightboxImg.classList.remove('scale-100');
+      lightboxImg.classList.add('scale-95');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+
+    // Close when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Zoom on double left-click
+    lightboxImg.addEventListener('dblclick', (e) => {
+      e.stopPropagation();
+      if (!isZoomed) {
+        lightboxImg.style.transform = 'scale(1.5)';
+        lightboxImg.classList.remove('cursor-zoom-in');
+        lightboxImg.classList.add('cursor-zoom-out');
+        isZoomed = true;
+      } else {
+        lightboxImg.style.transform = 'scale(1)';
+        lightboxImg.classList.remove('cursor-zoom-out');
+        lightboxImg.classList.add('cursor-zoom-in');
+        isZoomed = false;
+      }
+    });
+
+    // Make all images clickable
+    document.querySelectorAll('img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        openLightbox(img.src, img.alt || 'Image');
+      });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const navbarHeight = document.querySelector('nav').offsetHeight;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight - 10;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+  </script>
+
+
+
+
+</body>
+
+</html>
