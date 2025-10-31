@@ -71,6 +71,17 @@
             transform: scale(1.1);
         }
 
+        /* Hide hero text and buttons until animations trigger */
+        #hero h1,
+        #hero p,
+        #blue-button-wrapper,
+        #yellow-button-wrapper {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+
+
 
         .hero-gradient {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(236, 72, 153, 0.2) 100%);
@@ -203,29 +214,7 @@
 </header>
 
 
-<!-- Anime.js Button Animation -->
-<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        anime({
-            targets: '#blue-button-wrapper',
-            translateX: [-100, 0],  // Slide in from left
-            opacity: [0, 1],
-            easing: 'easeOutExpo',
-            duration: 2400,
-            delay: 2800
-        });
 
-        anime({
-            targets: '#yellow-button-wrapper',
-            translateX: [100, 0],  // Slide in from right
-            opacity: [0, 1],
-            easing: 'easeOutExpo',
-            duration: 2400,
-            delay: 2600
-        });
-    });
-</script>
 
 
 <!--CARD CREATION-->
@@ -629,6 +618,39 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 
+<!-- Anime.js Button Animation -->
+<script>
+    setTimeout(() => feather.replace(), 3500);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        anime({
+
+            targets: '#blue-button-wrapper',
+            translateX: [-100, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 2400,
+            delay: 2800,
+            begin: function () {
+                document.querySelector('#blue-button-wrapper').style.visibility = 'visible';
+            }
+        });
+
+        anime({
+
+            targets: '#yellow-button-wrapper',
+            translateX: [100, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 2400,
+            delay: 2600,
+            begin: function () {
+                document.querySelector('#yellow-button-wrapper').style.visibility = 'visible';
+            }
+        });
+    });
+</script>
+
 <script>
     feather.replace();
 
@@ -639,7 +661,10 @@
         translateY: [-20, 0],
         duration: 1500,
         easing: 'easeOutExpo',
-        delay: 300
+        delay: 300,
+        begin: function (anim) {
+            document.querySelectorAll('header h1').forEach(el => el.style.visibility = 'visible');
+        }
     });
 
     anime({
@@ -673,7 +698,10 @@
         translateY: [20, 0],
         duration: 1200,
         easing: 'easeOutExpo',
-        delay: 1200
+        delay: 1200,
+        begin: function (anim) {
+            document.querySelector('header p').style.visibility = 'visible';
+        }
     });
 
     // Scroll reveal animations
